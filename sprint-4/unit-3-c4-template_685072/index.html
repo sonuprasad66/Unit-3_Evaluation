@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <title>News App</title>
+  </head>
+  <body>
+    <div id="navbar">
+      <!-- <h2><a href="index.html">News App</a></h2>
+      <input type="text" id="search_input" placeholder="Search Twitter or Tesla News only."> -->
+
+    </div>
+
+    <div id="container">
+      <div id="sidebar">
+        <h3>Countries</h3>
+        <div><h3 id="in">India</h3></div>
+        <div><h3 id="ch">China</h3></div>
+        <div><h3 id="us">USA</h3></div> 
+        <div><h3 id="uk">UK</h3></div>
+        <div><h3 id="nz">Newzeland</h3></div>
+
+      </div>
+
+
+      <div id="results">
+
+      </div>
+    </div>
+    <!-- Give Navbar with id "navbar"  -->
+    <!-- Navbar will have input with id search_input and a link to home page i.e. index.html -->
+    <!-- Sidebar will have id "sidebar"  -->
+    <!-- Give link to top headlines of countries in sidebar with id as their country codes 
+    india :- in
+    china :- ch
+    usa :- us
+    uk : uk
+    Newzeland :- nz -->
+
+    <!-- Append results inside div with id "results"  -->
+    <!-- News divs will have class "news"  -->
+  </body>
+</html>
+<script >
+
+
+let Default = async ()=>{
+  try{
+let url = `https://masai-api.herokuapp.com/news/top-headlines?country=in`;
+let res = await fetch(url);
+let data = await res.json();
+console.log(data.articles)
+Append(data.articles)
+
+
+}
+catch(error){
+console.log(error)
+};
+}
+Default()
+
+let Append = (data)=>{
+    let results = document.getElementById("results");
+    results.innerHTML=null;
+    data.forEach(({urlToImage,title,description,content} )=>{
+
+      let data1 = {
+        urlToImage,
+        title,
+        content,
+        description,
+
+      }
+
+        let div = document.createElement("div")
+        div.setAttribute("class","news")
+        div.addEventListener("click",()=>{
+          Show(data1)
+        })
+
+        let div1 = document.createElement("div")
+        div.setAttribute("id","div1")
+
+        let div2 = document.createElement("div")
+        div.setAttribute("id","div2")
+
+
+        let image = document.createElement("img")
+        image.src = urlToImage;
+
+        let p1 = document.createElement("p")
+        p1.innerText = description;
+
+        let p2 = document.createElement("h3")
+        p2.innerText = title;
+
+       div1.append(image)
+       div2.append(p1,p2)
+       div.append(div1,div2)
+       results.append(div)
+
+    })
+
+}
+
+let Show = (data1)=>{
+  localStorage.setItem("news",JSON.stringify(data1))
+  window.location.href="news.html"
+}
+
+</script>
+
+<script  type="module">
+  import navbar from "./components/navbar.js";
+ document.getElementById('navbar').innerHTML=navbar();
+
+</script>
+
+<script type="module">
+
+// import navbar from "../components/navbar.js";
+//  document.getElementById('navbar').innerHTML=navbar();
+
+ import {India,China,Usa,Uk,Newzeland} from "./components/fetch.js"
+document.getElementById("in").addEventListener("click",India)
+document.getElementById("ch").addEventListener("click",China)
+document.getElementById("us").addEventListener("click",Usa)
+document.getElementById("uk").addEventListener("click",Uk)
+document.getElementById("nz").addEventListener("click",Newzeland)
+
+
+</script>
+

@@ -1,0 +1,21 @@
+
+#menu{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: -150px;
+}
+
+
+
+#container{
+    width: 25%;
+    margin: auto;
+}
+
+input,h2{
+    margin-top: 10px;
+}
+#submit{
+    margin-top: 10px;
+}

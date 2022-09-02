@@ -1,0 +1,51 @@
+
+h1{
+    text-align: center;
+}
+
+#hotel{
+
+    display: flex;
+    height: 400px;
+    width: 50%;
+    margin: auto;
+
+
+}
+
+#hotel>div{
+
+    margin: auto;
+}
+
+img{
+    width: 100%;
+}
+
+p{
+    text-align: center;
+}
+
+
+#checkout{
+
+    height: 60px;
+    width: 90%;
+    background-color: turquoise;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+}
+
+#checkout>input{
+    height: 60%;
+    width: 20%;
+}
+
+#book{
+    height: 60%;
+    width: 70px;
+}

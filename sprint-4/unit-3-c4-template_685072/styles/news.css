@@ -1,0 +1,18 @@
+
+
+#detailed_news{
+    height: 500px;
+    width: 35%;
+    /* border: 1px solid blue; */
+    margin: 40px auto;
+}
+
+#detailed_news>div{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+#detailed_news>div>img{
+width: 100%;
+
+}

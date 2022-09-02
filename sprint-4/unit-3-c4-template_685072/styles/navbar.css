@@ -1,0 +1,23 @@
+#navbar{
+    height: 50px;
+    width: 100%;
+    /* border: 1px solid red; */
+    background-color: rgb(240, 211, 211);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+    }
+    #navbar>h2>a{
+        text-decoration: none;
+        font-size: 32px;
+    }
+    
+    #search_input{
+        height: 30px;
+        width: 70%;
+        border-radius: 20px;
+        font-size: 22px;
+        border: 1px solid brown;
+    }

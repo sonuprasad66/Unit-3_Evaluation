@@ -1,0 +1,25 @@
+
+#menu{
+    margin-bottom: 30px;
+}
+
+#products_data{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+#products_data>div{
+    border: 1px solid blue;
+}
+
+img{
+    width: 100%;
+}
+p{
+    text-align: center;
+}
+#cbtn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
